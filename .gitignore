@@ -1,0 +1,7 @@
+.env
+node_modules/
+agent.db
+agent.db-*
+output/
+config/baseline_cv.txt
+config/pe-companies.txt

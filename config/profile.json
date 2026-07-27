@@ -1,0 +1,83 @@
+﻿{
+  "name": "Michael T. Jarvis",
+  "email": "MTJarvis@att.net",
+  "phone": "817-366-6069",
+  "linkedin": "www.linkedin.com/in/mtjarvis",
+
+  "hardGates": {
+    "compFloorBase": 0,
+    "allowUnpostedComp": true,
+    "minSeniority": ["head", "director", "vp", "avp", "senior director", "lead"],
+    "excludeTitlePatterns": [
+      "recruiter i", "recruiting coordinator", "sourcer", "intern",
+      "talent acquisition specialist", "hr generalist", "hr business partner"
+    ],
+    "acceptableLocations": {
+      "remoteUS": true,
+      "states": ["TX"],
+      "cities": ["Austin", "Dallas", "Fort Worth", "Plano", "Irving", "San Francisco", "New York", "Stillwater"],
+      "relocationOpen": true,
+      "hardNo": []
+    },
+    "requireNoSponsorship": true
+  },
+
+  "softSignals": {
+    "boost": [
+      "AI-native or AI-first company",
+      "generative AI in recruiting named in the JD",
+      "build or rebuild the TA function",
+      "workforce planning ownership",
+      "global or multi-region scope",
+      "PE-backed or pre-IPO",
+      "healthcare tech, legal tech, fintech, cybersecurity",
+      "defense, federal, DoD, or veteran hiring",
+      "campus or early career program ownership"
+    ],
+    "penalize": [
+      "individual contributor with no team",
+      "pure sourcing role",
+      "requires PHR/SPHR/SHRM",
+      "requires security clearance",
+      "requires an engineering degree",
+      "on-site in a city not on the acceptable list",
+      "posted band tops out below the floor"
+    ]
+  },
+
+  "notHeld": {
+    "ats": ["Ashby", "SmartRecruiters", "SuccessFactors", "Taleo", "Dayforce"],
+    "tools": ["CoderPad", "Metaview", "BrightHire", "Covey"],
+    "domains": [
+      "mortgage", "skilled trades", "wealth advisor recruiting",
+      "aerospace or hardware engineering hiring", "federal contracting or cleared recruiting",
+      "property management", "manufacturing or AV"
+    ],
+    "credentials": ["PHR", "SPHR", "SHRM-CP", "SHRM-SCP", "engineering degree", "accounting degree"]
+  },
+
+  "coreProofPoints": [
+    "Three-time TA function builder: PDX, Change Healthcare, Litera",
+    "13 consecutive years of workforce capability planning ownership",
+    "Time to fill 70+ days to under 35 at Litera, quality of hire held primary",
+    "Recruiter productivity +35 percent, outreach response tripled via generative AI",
+    "$4M+ agency spend eliminated at PDX; PDX turnover 20%+ to under 10%",
+    "PDX scaled 400 to 1,200+; Manila built from zero to 350+",
+    "Change Healthcare: 40+ recruiters, 3,000+ annual hires, 20+ countries",
+    "RBC: five departments unified, 45-person team, 32 countries",
+    "Glassdoor 2.6 to 3.2 at Litera with 40 percent inbound application lift"
+  ],
+
+  "styleRules": {
+    "noEmDashes": true,
+    "noEnDashes": true,
+    "font": "Calibri",
+    "nameColorHex": "1F4E79",
+    "dividerColorHex": "2E75B6",
+    "dateSeparator": "to",
+    "maxResumePages": 2,
+    "availability": "available with 2-3 weeks notice",
+    "neverStateCompInFirstTouch": true
+  }
+}
+
