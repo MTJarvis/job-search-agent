@@ -1,0 +1,44 @@
+{
+  "name": "Your Name",
+  "email": "you@example.com",
+  "phone": "555-555-5555",
+  "linkedin": "www.linkedin.com/in/yourhandle",
+
+  "hardGates": {
+    "compFloorBase": 0,
+    "allowUnpostedComp": true,
+    "minSeniority": ["head", "director", "vp", "senior director", "lead"],
+    "excludeTitlePatterns": ["coordinator", "intern", "specialist"],
+    "acceptableLocations": {
+      "remoteUS": true,
+      "states": ["TX"],
+      "cities": ["Austin", "Dallas"],
+      "relocationOpen": true,
+      "hardNo": []
+    },
+    "requireNoSponsorship": true
+  },
+
+  "softSignals": {
+    "boost": [
+      "signals that raise a role's fit score",
+      "one per line, plain language"
+    ],
+    "penalize": [
+      "signals that lower a role's fit score",
+      "one per line, plain language"
+    ]
+  },
+
+  "notHeld": {
+    "ats": ["ATS platforms you have not used"],
+    "tools": ["tools you have not used"],
+    "domains": ["industries you have not recruited for"],
+    "credentials": ["certifications and degrees you do not hold"]
+  },
+
+  "coreProofPoints": [
+    "Quantified accomplishments the tailoring step is allowed to draw from",
+    "Keep these factual. The fabrication audit checks drafts against them."
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "greenhouse": ["anthropic", "cresta", "engine", "brighthire"],
-  "lever": [],
-  "ashby": ["gen-digital", "ramp", "vanta", "fieldguide", "fluidstack", "terrafirma-inc"],
-  "workday": [
-    { "host": "sec.wd3.myworkdayjobs.com", "tenant": "sec", "site": "Samsung_Careers" }
-  ]
-}

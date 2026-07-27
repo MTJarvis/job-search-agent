@@ -1,0 +1,8 @@
+{
+  "greenhouse": ["company-board-token"],
+  "lever": ["company-board-token"],
+  "ashby": ["company-board-token"],
+  "workday": [
+    { "host": "tenant.wdN.myworkdayjobs.com", "tenant": "tenant", "site": "Careers_Site_Name" }
+  ]
+}

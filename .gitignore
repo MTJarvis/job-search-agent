@@ -5,3 +5,6 @@ agent.db-*
 output/
 config/baseline_cv.txt
 config/pe-companies.txt
+
+config/profile.json
+config/companies.json
