@@ -14,12 +14,12 @@ Built to run as a scheduled job (cron, GitHub Actions, or a Cloudflare Worker wi
   └──────┬───────┘
          │
   ┌──────▼───────┐
-  │  2. DEDUPE   │  hash against tracker + seen.db
+  │  2. DEDUPE   │  hash against tracker + agent.db
   └──────┬───────┘
          │
   ┌──────▼───────┐
   │  3. SCORE    │  hard gates, then LLM fit scoring
-  └──────┬───────┘  (kills ~90% of volume here)
+  └──────┬───────┘  (kills ~99% of volume here)
          │
   ┌──────▼───────┐
   │  4. TAILOR   │  baseline CV + JD → tailored docx/pdf
@@ -41,13 +41,13 @@ Built to run as a scheduled job (cron, GitHub Actions, or a Cloudflare Worker wi
 ## What you get per role
 
 ```
-output/2026-07-26_Gen-Digital_Global-Head-of-Talent/
+output/2026-07-26_Acme-Corp_Director-of-Talent-Acquisition/
   00_BRIEF.md                          title, scope, comp, location, fit read, gaps
   01_CONTACT.md                        hiring manager, email, verification status
   02_EMAIL.md                          the outreach draft (also saved to Outlook)
   03_POSTING.txt                       raw JD, archived
-  MJarvis_CV_2026_GenDigital.docx/.pdf
-  MJarvis_CoverLetter_GenDigital_2026.docx/.pdf
+  MJarvis_CV_2026_AcmeCorp.docx/.pdf
+  MJarvis_CoverLetter_AcmeCorp_2026.docx/.pdf
 output/INDEX_2026-07-26.md             one table across every folder that day
 ```
 
@@ -85,7 +85,9 @@ Reviewing a packaged folder takes a couple of minutes: read `00_BRIEF.md`, skim 
 
 ```bash
 npm install
-cp .env.example .env    # fill in keys
+cp .env.example .env                                    # fill in keys
+cp config/profile.example.json config/profile.json      # fill in your criteria
+cp config/companies.example.json config/companies.json  # fill in your watchlist
 node src/pipeline.js --once      # single run
 node src/pipeline.js --schedule  # daily at 06:00 local
 ```
@@ -101,13 +103,13 @@ node src/pipeline.js --schedule  # daily at 06:00 local
 
 ### Company watchlist
 
-`config/companies.json` is the ATS watchlist. Seed it with the ~200 companies you would actually work for, keyed by ATS and board token:
+Copy `config/companies.example.json` to `config/companies.json` and seed it with the companies you would actually work for, keyed by ATS and board token:
 
 ```json
-{ "greenhouse": ["ramp", "anthropic"], "lever": ["fluidstack"], "ashby": ["gen-digital"] }
+{ "greenhouse": ["acme"], "lever": ["northwind"], "ashby": ["contoso"] }
 ```
 
-Finding a token: a job URL like `job-boards.greenhouse.io/ramp/jobs/123` gives you `ramp`.
+Finding a token: a job URL like `job-boards.greenhouse.io/acme/jobs/123` gives you `acme`.
 
 ---
 
@@ -115,8 +117,8 @@ Finding a token: a job URL like `job-boards.greenhouse.io/ramp/jobs/123` gives y
 
 | Path | Does |
 |---|---|
-| `config/profile.json` | your criteria: floor, level, location, gates |
-| `config/companies.json` | ATS watchlist |
+| `config/profile.example.json` | template for your criteria: floor, level, location, gates. Copy to `config/profile.json`, which is gitignored. |
+| `config/companies.example.json` | template for the ATS watchlist. Copy to `config/companies.json`, which is gitignored. |
 | `src/sources/ats.js` | Greenhouse, Lever, Ashby, Workday readers |
 | `src/sources/rss.js` | RSS feeds (BuiltIn and similar) |
 | `src/sources/aggregator.js` | SerpApi Google Jobs adapter |
